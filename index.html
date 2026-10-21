@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f3f6f4">
+  <meta name="description" content="Sosyal Bilgiler 4-8. Sınıf PDF dosyasını çevrim içi önizleyin veya indirin.">
+  <title>Sosyal Bilgiler 4-8. Sınıf PDF</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #18332f;
+      --muted: #657773;
+      --paper: #ffffff;
+      --canvas: #f3f6f4;
+      --line: #dce5e1;
+      --green: #176a58;
+      --green-dark: #105445;
+      --lime: #d9ef8c;
+      --orange: #e98955;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      min-width: 320px;
+      min-height: 100vh;
+      margin: 0;
+      color: var(--ink);
+      background-color: var(--canvas);
+      background-image: radial-gradient(#d5e1db 0.7px, transparent 0.7px);
+      background-size: 18px 18px;
+      font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+    }
+
+    .site-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      width: min(1160px, calc(100% - 48px));
+      margin: 0 auto;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      color: var(--ink);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      display: grid;
+      width: 38px;
+      height: 38px;
+      place-items: center;
+      color: var(--ink);
+      background: var(--lime);
+      border-radius: 11px 11px 11px 3px;
+      font-family: Georgia, serif;
+      font-size: 21px;
+      font-weight: 700;
+    }
+
+    .header-note {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    main {
+      width: min(1160px, calc(100% - 48px));
+      margin: 0 auto;
+      padding: 48px 0 36px;
+    }
+
+    .document-intro {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 25px;
+      animation: arrive 500ms ease-out both;
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin: 0 0 12px;
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      width: 20px;
+      height: 3px;
+      background: var(--orange);
+      content: "";
+    }
+
+    h1 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(34px, 5vw, 54px);
+      font-weight: 500;
+      letter-spacing: 0;
+      line-height: 1.05;
+    }
+
+    .subtitle {
+      margin: 11px 0 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .actions {
+      display: flex;
+      flex-shrink: 0;
+      gap: 10px;
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 46px;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 0 17px;
+      border: 1px solid var(--green);
+      border-radius: 6px;
+      font: inherit;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background-color 160ms ease, transform 160ms ease;
+    }
+
+    .button:hover { transform: translateY(-1px); }
+    .button:focus-visible { outline: 3px solid var(--orange); outline-offset: 3px; }
+
+    .button-primary {
+      color: white;
+      background: var(--green);
+    }
+
+    .button-primary:hover { background: var(--green-dark); }
+
+    .button-secondary {
+      color: var(--green);
+      background: var(--paper);
+    }
+
+    .button-secondary:hover { background: #edf4ef; }
+
+    .viewer {
+      overflow: hidden;
+      border: 1px solid #d5dfda;
+      border-radius: 8px;
+      background: var(--paper);
+      box-shadow: 0 16px 44px rgb(24 51 47 / 10%);
+      animation: arrive 650ms 90ms ease-out both;
+    }
+
+    .viewer-bar {
+      display: flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 0 17px;
+      border-bottom: 1px solid var(--line);
+      background: #fff;
+    }
+
+    .viewer-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #67a77a;
+      box-shadow: 0 0 0 3px #e7f1e8;
+    }
+
+    .page-count {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .pdf-frame {
+      display: block;
+      width: 100%;
+      height: min(76vh, 900px);
+      min-height: 520px;
+      border: 0;
+      background: #e8eeeb;
+    }
+
+    .viewer-fallback {
+      padding: 18px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    .viewer-fallback a { color: var(--green); font-weight: 700; }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding-top: 17px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    @keyframes arrive {
+      from { opacity: 0; transform: translateY(9px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 700px) {
+      .site-header, main { width: min(100% - 32px, 560px); }
+      .site-header { padding: 17px 0; }
+      .header-note { display: none; }
+      main { padding-top: 34px; }
+      .document-intro { align-items: start; flex-direction: column; gap: 20px; }
+      .actions { width: 100%; }
+      .button { flex: 1; padding: 0 12px; }
+      .pdf-frame { height: 68vh; min-height: 420px; }
+    }
+
+    @media (max-width: 390px) {
+      .actions { flex-direction: column; }
+      .button { width: 100%; }
+      .viewer-bar { padding: 0 12px; }
+      .page-count { font-size: 11px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Sosyal Bilgiler ana sayfa">
+      <span class="brand-mark" aria-hidden="true">S</span>
+      <span>SOSYAL BİLGİLER</span>
+    </a>
+    <span class="header-note">Ders notları ve kaynaklar</span>
+  </header>
+
+  <main>
+    <section class="document-intro" aria-labelledby="document-title">
+      <div>
+        <p class="eyebrow">PDF kaynak</p>
+        <h1 id="document-title">Sosyal Bilgiler 4-8. Sınıf</h1>
+        <p class="subtitle">Belgeyi aşağıdan inceleyebilir veya cihazınıza indirebilirsiniz.</p>
+      </div>
+      <div class="actions">
+        <a class="button button-primary" href="sosyal48.pdf" download>
+          <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+            <path d="m7 10 5 5 5-5M12 15V3" />
+          </svg>
+          PDF'yi indir
+        </a>
+        <a class="button button-secondary" href="sosyal48.pdf" target="_blank" rel="noopener">
+          <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7Z" />
+            <circle cx="12" cy="12" r="3" />
+          </svg>
+          Yeni sekmede aç
+        </a>
+      </div>
+    </section>
+
+    <section class="viewer" aria-label="PDF önizleme">
+      <div class="viewer-bar">
+        <span class="viewer-label"><span class="status-dot" aria-hidden="true"></span>Önizleme</span>
+        <span class="page-count">183 sayfa</span>
+      </div>
+      <iframe class="pdf-frame" src="sosyal48.pdf#toolbar=1&amp;navpanes=0&amp;view=FitH" title="Sosyal Bilgiler 48 PDF önizlemesi">
+        <p class="viewer-fallback">Tarayıcınız PDF önizlemesini desteklemiyor. <a href="sosyal48.pdf">PDF dosyasını açın</a>.</p>
+      </iframe>
+    </section>
+
+    <footer>
+      <span>sosyal48.pdf</span>
+      <span>PDF belge · 183 sayfa</span>
+    </footer>
+  </main>
+</body>
+</html>
